@@ -38,14 +38,7 @@ const SignUp = ({ user, socket, input, setInput }) => {
           Join Chat
         </button>
 
-        <div className="mt-4 text-center">
-          <p className="text-gray-500 mb-2">OR</p>
-          <a href="http://localhost:3001/auth/google">
-            <button className="text-xl w-full text-white font-bold py-2 px-3 rounded-md bg-blue-600 hover:bg-blue-700">
-              Sign in with Google
-            </button>
-          </a>
-        </div>
+        
       </div>
     </div>
   );
