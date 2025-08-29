@@ -2,7 +2,7 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
-const db = require("./db"); // Your MySQL connection
+const db = require("./db"); // MySQL connection
 
 const app = express();
 const server = http.createServer(app);
@@ -14,7 +14,7 @@ const io = new Server(server, {
   cors: { origin: "*" },
 });
 
-// Track active users: { username: socketId }
+// Track active users in memory: { username: socketId }
 let activeUsers = {};
 
 // --- Socket.IO ---
@@ -110,7 +110,6 @@ io.on("connection", (socket) => {
 });
 
 // --- API Endpoints ---
-
 // Get conversation between 2 users
 app.get("/conversation/:user1/:user2", (req, res) => {
   const { user1, user2 } = req.params;
